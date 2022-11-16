@@ -104,12 +104,21 @@ function SinApuesta(){
     document.getElementById('apostado1').value = apuesta;
     menosapuesta = parseInt(saldo) + parseInt(sumar);
     document.getElementById('saldo1').value = menosapuesta;
-    if(apuesta == 0){
+    saldo2 = document.getElementById("saldo1").value;
+    if(parseInt(saldo2) >= 0){
         document.getElementById('x0').disabled = true;
-        document.getElementById('x1').disabled = false;
-        document.getElementById('x2').disabled = false;
-        document.getElementById('x5').disabled = false;
-        document.getElementById('x10').disabled = false;
+        if(parseInt(saldo2) >= 50){
+            document.getElementById('x1').disabled = false;
+            if(parseInt(saldo2) >= 100){
+                document.getElementById('x2').disabled = false;
+                if(parseInt(saldo2) >= 250){
+                    document.getElementById('x5').disabled = false;
+                    if(parseInt(saldo2) >= 500){
+                        document.getElementById('x10').disabled = false;
+                    }
+                }
+            }
+        }
     }
 }
 

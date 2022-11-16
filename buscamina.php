@@ -15,17 +15,15 @@ if (isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])) {
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Black Jack</title>
-        <link rel="icon" href="data:,">
-        <link rel="stylesheet" href="css/blackjack.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">   
-        <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> 
-    </head>
-
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="css/minesweeper.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">   
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> 
+</head>
+<body>
     <div id="premio">
         <table style="margin: 0 auto;">
             <tr>
@@ -67,7 +65,7 @@ if (isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])) {
                   </form>
                   <a href="#" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" data-toggle="modal" data-target="#retirarsaldo"><i class='fas fa-hand-holding-usd'></i> Retirar Saldo</a>
                   <a href="principal.php" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" ><i class='fas fa-hand-holding-usd'></i> Roulette</a>
-                  <a href="buscamina.php" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" ><i class='fas fa-hand-holding-usd'></i> Busca Mina</a>
+                  <a href="blackjack.php" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" ><i class='fas fa-hand-holding-usd'></i> Blackjack</a>
                   <form action="logout.php" method="POST">
                     <button type="submit" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" name="borrar"><i class='fa fa-sign-out'></i> Cerrar Sesión</button>
                   </form>
@@ -78,7 +76,7 @@ if (isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])) {
         </nav>
       </div>
     </div>
-  <div data-backdrop="static" class="modal fade" id="retirarsaldo">
+    <div data-backdrop="static" class="modal fade" id="retirarsaldo">
     <div class="col-md-12 modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -124,24 +122,16 @@ if (isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])) {
       </tr>
     </table>
   </div>
-        <h1 style="margin: 100px;">Maquina: <span id="dealer-sum"></span></h1>
-        <div id="dealer-cards">
-            <img id="hidden" src="./cards/BACK.png">
-        </div>
-
-        <h1 style="margin: 100px;">Tu: <span id="your-sum"></span></h1>
-        <div id="your-cards"></div>
-
+        <h1 style="margin: 100px;">Minas: <span id="mines-count">0</span></h1>
+        <div id="board"></div>
         <br>
-        <button id="hit">Tomar otra</button>
-        <button id="stay">Quedarse</button>
+        <button id="flag-button">🚩</button>
 
-
-        <script src="js/blackjack.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://kit.fontawesome.com/2be8605e79.js"></script>
         <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+        <script src="js/minesweeper.js"></script>
 
     </body>
 </html>

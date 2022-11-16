@@ -78,6 +78,7 @@ if (isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])) {
                 </form>
                   <a href="#" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" data-toggle="modal" data-target="#retirarsaldo"><i class='fas fa-hand-holding-usd'></i> Retirar Saldo</a>
                   <a href="blackjack.php" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" ><i class='fas fa-hand-holding-usd'></i> Blackjack</a>
+                  <a href="buscamina.php" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" ><i class='fas fa-hand-holding-usd'></i> Busca Mina</a>
                 <form action="logout.php" method="POST">
                   <button type="submit" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" name="borrar"><i class='fa fa-sign-out'></i> Cerrar Sesión</button>
                 </form>
